@@ -1,0 +1,25 @@
+.my-border img {
+    border: 2px black solid;
+    width: 1076px;
+    height: 400px;
+    margin: auto;
+}
+
+.margin-bottom-zero {
+    margin-bottom: 0 !important;
+    bottom: 0 !important;
+}
+
+body {
+    background: #23074d;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cc5333, #23074d);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cc5333, #23074d);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.background-style {
+    background: rgba(0,0,0,0.5) !important;
+}
