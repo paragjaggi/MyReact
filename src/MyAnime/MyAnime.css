@@ -10,7 +10,7 @@
     bottom: 0 !important;
 }
 
-body {
+.body {
     background: #23074d;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #cc5333, #23074d);
