@@ -1,15 +1,21 @@
 import './App.css';
 import React from 'react';
 import MyAnime from './MyAnime/MyAnime';
-import Header from './MyAnime/header';
+import Header from './header';
 import SideBar from './MyAnime/sidebar';
-import Footer from './MyAnime/footer';
+import Footer from './footer';
 import PureComponentExample from './Components/PureComponentExample';
 import NormalComponentExample from './Components/NormalComponentExample';
 import MemoComponentExample from './Components/MemoComponentExample';
 import CountryComponent from './Error/CountryComponent';
 import ErrorBoundary from './Error/ErrorBoundary';
 import FunctionalHook from './Hooks/FunctionalHooks';
+import { Route, Switch } from 'react-router';
+import Home from './RouterComponents/Home';
+import NotFound from './RouterComponents/NotFound';
+import { BrowserRouter } from 'react-router-dom';
+import Register from './RouterComponents/Register';
+import Naruto from './MyAnime/Naruto';
 
 class App extends React.Component {
   constructor() {
@@ -30,9 +36,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header siteName={this.state.siteName} />
-        <div>
-          <PureComponentExample count={this.state.count} />
+        <BrowserRouter>
+          <Header siteName={this.state.siteName} />
+          <div>
+            {/* <PureComponentExample count={this.state.count} />
           <NormalComponentExample count={this.state.count} />
           <MemoComponentExample count={this.state.count} />
           <ErrorBoundary>
@@ -41,10 +48,19 @@ class App extends React.Component {
           <ErrorBoundary>
             <CountryComponent country="" />
           </ErrorBoundary>
-          <FunctionalHook/>
-        </div>
-        {/* <MyAnime /> */}
-        <Footer name={this.state.name} />
+          <FunctionalHook/> */}
+
+          </div>
+          {/* <MyAnime /> */}
+
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route exact path="/naruto/:name" component={Naruto}></Route>
+            <Route path="/register" component={Register}></Route>
+            <Route path="*" component={NotFound}></Route>
+          </Switch>
+          <Footer name={this.state.name} />
+        </BrowserRouter>
       </div>
     );
 

@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import Naruto from './MyAnime/Naruto';
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
     }
-
     render() {
         return (
             <nav className="navbar navbar-expand-sm nav-pills bg-dark">
                 <ul className="nav  mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page">{this.props.siteName}</a>
+                        <NavLink to="/" className="nav-link">{this.props.siteName}</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link">Naruto <span className="badge badge-secondary">1</span></a>
+                        <NavLink to="/naruto/Uzumaki" className="nav-link">Naruto <span className="badge badge-secondary">1</span></NavLink>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link">Demon Slayer</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link">Register</a>
+                        <NavLink to="/register" className="nav-link">Register</NavLink>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
